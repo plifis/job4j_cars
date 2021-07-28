@@ -2,6 +2,7 @@ package ru.job4j.model;
 
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -11,6 +12,7 @@ public class Advt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean isSale;
+    private Date created;
 
     @OneToOne
     @JoinColumn("car_id")
@@ -42,6 +44,14 @@ public class Advt {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     @Override
