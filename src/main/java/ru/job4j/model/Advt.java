@@ -13,6 +13,11 @@ public class Advt {
     private int id;
     private boolean isSale;
     private Date created;
+    private Float price;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
 
     @OneToOne
     @JoinColumn("car_id")
@@ -20,6 +25,13 @@ public class Advt {
 
     public Advt() {
 
+    }
+
+    public Advt(Author author, Car car, Float price) {
+        this.author = author;
+        this.car = car;
+        this.isSale = false;
+        this.price = price;
     }
 
     public int getId() {
@@ -54,20 +66,20 @@ public class Advt {
         this.created = created;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Advt advt = (Advt) o;
-        return id == advt.id && isSale == advt.isSale && Objects.equals(car, advt.car);
+    public Float getPrice() {
+        return price;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, isSale, car);
+    public void setPrice(Float price) {
+        this.price = price;
     }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
 }

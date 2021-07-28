@@ -10,9 +10,12 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
 
-    @OneToMany
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Advt> list = new ArrayList<>();
 
 
@@ -20,10 +23,9 @@ public class Author {
 
     }
 
-    public Author(String name) {
-        this.name = name;
+    public Author(User user) {
+        this.user = user;
     }
-
 
     public int getId() {
         return id;
@@ -33,12 +35,12 @@ public class Author {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public User getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public List<Advt> getList() {

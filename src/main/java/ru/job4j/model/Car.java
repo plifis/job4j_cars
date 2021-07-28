@@ -66,22 +66,4 @@ public class Car {
         this.image = image;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return id == car.id &&
-                Objects.equals(description, car.description) &&
-                Objects.equals(mark, car.mark) &&
-                Objects.equals(body, car.body) &&
-                Arrays.equals(image, car.image);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(id, description, mark, body);
-        result = 31 * result + Arrays.hashCode(image);
-        return result;
-    }
 }
