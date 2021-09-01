@@ -3,6 +3,7 @@ package ru.job4j.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "authors")
@@ -15,7 +16,7 @@ public class Author {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Advt> list = new ArrayList<>();
 
 
@@ -53,5 +54,18 @@ public class Author {
 
     public void addAdvt(Advt advt) {
         this.list.add(advt);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return id == author.id && Objects.equals(user, author.user) && Objects.equals(list, author.list);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user, list);
     }
 }

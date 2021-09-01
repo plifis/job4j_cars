@@ -2,6 +2,7 @@ package ru.job4j.model;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Objects;
 
@@ -12,26 +13,27 @@ public class Advt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean isSale;
+
+    @Temporal(TemporalType.DATE)
+    @Column(updatable = false)
     private Date created;
     private Float price;
 
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    private Author author;
-
-    @OneToOne
-    @JoinColumn("car_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "car_id")
     private Car car;
+
+
 
     public Advt() {
 
     }
 
-    public Advt(Author author, Car car, Float price) {
-        this.author = author;
+    public Advt(Car car, Float price) {
         this.car = car;
         this.isSale = false;
         this.price = price;
+        this.created = new Timestamp(System.currentTimeMillis());
     }
 
     public int getId() {
@@ -74,12 +76,16 @@ public class Advt {
         this.price = price;
     }
 
-    public Author getAuthor() {
-        return author;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Advt advt = (Advt) o;
+        return id == advt.id && isSale == advt.isSale && Objects.equals(created, advt.created) && Objects.equals(price, advt.price) && Objects.equals(car, advt.car);
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, isSale, created, price, car);
     }
-
 }

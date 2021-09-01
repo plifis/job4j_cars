@@ -1,0 +1,59 @@
+ul{
+    width: 100%;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkcyan;
+}
+li {
+    display: inline;
+    float: left;
+    border-left: 1px solid whitesmoke;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: lightcyan;
+
+}
+.active{
+    background-color: black;
+}
+table {
+    width: 100%;
+}
+th {
+    background-color: lightcyan;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+tr:hover {
+    background-color: lightcyan;
+}
+
+input[type=text], [type=number] {
+    width: 30%;
+    padding: 12px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+select {
+    width: 30%;
+    padding: 12px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+

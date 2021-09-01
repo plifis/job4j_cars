@@ -14,7 +14,7 @@ public class AdRepository {
     public List<Advt> getAdvtCurrentMark(Car car, Session session) {
         return session.createQuery("select distinct a from Advt a "
                 + "join fetch a.car where a.car = :aMark", Advt.class)
-                .setParameter(":aMark", car).list();
+                .setParameter(":aMark", car.getMark()).list();
     }
      public List<Advt> getAdvtWithImage(Session session) {
         return session.createQuery("select distinct a from Advt a "
