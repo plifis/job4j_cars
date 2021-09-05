@@ -1,4 +1,4 @@
-package ru.job4j.controller;
+package ru.job4j.control;
 
 import ru.job4j.model.User;
 import ru.job4j.store.HbStore;

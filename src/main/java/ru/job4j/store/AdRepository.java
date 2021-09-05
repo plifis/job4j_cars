@@ -1,4 +1,4 @@
-package ru.job4j.controller;
+package ru.job4j.store;
 
 import org.hibernate.Session;
 import ru.job4j.model.Advt;

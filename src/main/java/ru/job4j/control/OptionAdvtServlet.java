@@ -1,7 +1,6 @@
-package ru.job4j.controller;
+package ru.job4j.control;
 
 import org.json.JSONArray;
-import ru.job4j.model.Car;
 import ru.job4j.store.HbStore;
 
 import javax.servlet.ServletException;

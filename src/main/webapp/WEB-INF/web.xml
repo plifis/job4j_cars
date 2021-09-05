@@ -6,35 +6,35 @@
          version="2.4">
     <servlet>
         <servlet-name>AdServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.AdvtServlet</servlet-class>
+        <servlet-class>ru.job4j.control.AdvtServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.RegServlet</servlet-class>
+        <servlet-class>ru.job4j.control.RegServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.AuthServlet</servlet-class>
+        <servlet-class>ru.job4j.control.AuthServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.UploadServlet</servlet-class>
+        <servlet-class>ru.job4j.control.UploadServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateAdvtServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.UpdateAdvtServlet</servlet-class>
+        <servlet-class>ru.job4j.control.UpdateAdvtServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeletePhotoServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.DeletePhotoServlet</servlet-class>
+        <servlet-class>ru.job4j.control.DeletePhotoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OptionAdvtServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.OptionAdvtServlet</servlet-class>
+        <servlet-class>ru.job4j.control.OptionAdvtServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteAdvtServlet</servlet-name>
-        <servlet-class>ru.job4j.controller.DeleteAdvtServlet</servlet-class>
+        <servlet-class>ru.job4j.control.DeleteAdvtServlet</servlet-class>
     </servlet>
     <filter>
         <filter-name>CORSFilter</filter-name>

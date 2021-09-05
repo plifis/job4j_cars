@@ -1,4 +1,4 @@
-package ru.job4j.controller;
+package ru.job4j.control;
 
 import org.hibernate.exception.ConstraintViolationException;
 import ru.job4j.model.User;

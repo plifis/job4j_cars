@@ -1,11 +1,10 @@
-package ru.job4j.controller;
+package ru.job4j.control;
 
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.fileupload.util.Streams;
 import org.json.*;
 import ru.job4j.model.Advt;
 import ru.job4j.model.Author;
@@ -19,7 +18,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +42,6 @@ public class AdvtServlet extends HttpServlet {
         File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
 
         User user = (User) req.getSession().getAttribute("user");// не удалять
-        String desc = req.getParameter("description");
 
         String nameImage = null;
         factory.setRepository(repository);
